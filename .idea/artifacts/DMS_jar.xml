@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DMS:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DMS_jar</output-path>
+    <root id="archive" name="DMS.jar">
+      <element id="module-output" name="DMS" />
+      <element id="library" level="module" name="mysql-connector-java-5.0.8-bin.jar" module-name="DMS" />
+    </root>
+  </artifact>
+</component>
