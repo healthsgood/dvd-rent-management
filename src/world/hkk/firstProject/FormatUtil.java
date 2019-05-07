@@ -84,7 +84,7 @@ public class FormatUtil {
     public static void printFormatTitleEntries(List<DVD.TitleEntry> list){
         for (DVD.TitleEntry entry :
                 list) {
-            printFormat(entry.getTitle(), entry.getValue(),entry.isLeftTable());
+            printFormat(entry.getTitle(), entry.getValue(),false);
         }
     }
 }
