@@ -4,7 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import static world.hkk.firstProject.FormatUtil.*;
+
 public class Manage {
+
+
+
+
 	DVD dvd[]=new DVD[50];
 	int count=5;
 	boolean stop=false;
@@ -12,11 +18,11 @@ public class Manage {
 	Date time=new Date();
 
 	Manage(){
-		dvd[0]=new DVD("黑暗骑士","48.8",true,"张三","2017-12-15",5);
-		dvd[1]=new DVD("星际穿越","36.6",false,"  ","          ",1);
+		dvd[0]=new DVD("黑暗骑士","48.8",true,"zhangsan","2017-12-15",5);
+		dvd[1]=new DVD("星际穿越","36.6",false,"","",1);
 		dvd[2]=new DVD("敦刻尔克","59.8",true,"李四","2018-02-28",2);
-		dvd[3]=new DVD("记忆碎片","37.5",false,"  ","          ",0);
-		dvd[4]=new DVD("盗梦空间","45.9",false,"  ","          ",2);
+		dvd[3]=new DVD("记忆碎片","37.5",false,"","2018-02-28",0);
+		dvd[4]=new DVD("盗梦空间","45.9",false,"","",2);
 	}
 	void init(){//初始化主菜单
 		System.out.println("\n------欢迎使用DVD管理系统------\n"
@@ -31,17 +37,28 @@ public class Manage {
 		return index;
 	}
 	void list(boolean special){//1,查看所有DVD
-		System.out.println("\n影片\t\t\t价格\t\t状态\t\t借阅者\t借出日期\t\t借阅次数");
+		System.out.println();
+		System.out.println();
+		printFormatTitles(MOVIE_NAME,PRICE_NAME,IS_LEND_NAME,TENANT_NAME,LEND_DATE_NAME,RENT_TIMES_NAME);
+		System.out.println();
 		for(int i=0;i<count;++i)dvd[i].showAll();
 		if(special)isContinue();
 	}
 	void lendList(boolean special){//2,查看已借出DVD
-		System.out.println("\n影片\t\t价格\t借阅者\t借出日期\t\t借阅次数");
+//		System.out.println("\n影片\t\t价格\t借阅者\t借出日期\t\t借阅次数");
+		System.out.println();
+		System.out.println();
+		printFormatTitles(MOVIE_NAME,PRICE_NAME,TENANT_NAME,LEND_DATE_NAME,RENT_TIMES_NAME);
+		System.out.println();
 		for(int i=0;i<count;++i)dvd[i].showOnlyIsLend();
 		if(special)isContinue();
 	}
 	void notLendList(boolean special){//3,查看未借出DVD
-		System.out.println("\n影片\t\t价格\t借阅次数");
+//		System.out.println("\n影片\t\t价格\t借阅次数");
+		System.out.println();
+		System.out.println();
+		printFormatTitles(MOVIE_NAME,PRICE_NAME,RENT_TIMES_NAME);
+		System.out.println();
 		for(int i=0;i<count;++i)dvd[i].showOnlyNotLend();
 		if(special)isContinue();
 	}
