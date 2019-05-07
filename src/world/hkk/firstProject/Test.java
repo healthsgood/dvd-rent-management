@@ -3,7 +3,6 @@ package world.hkk.firstProject;
 public class Test {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		Manage m=new Manage();
 		while(true){
 			
@@ -19,9 +18,9 @@ public class Test {
 			case "7":m.pay();break;
 			case "8":m.rankList();break;
 			case "9":
-				System.out.println("\n----------ÏµÍ³ÒÑÍË³ö----------");
+				System.out.println("\n----------ç³»ç»Ÿå·²é€€å‡º----------");
 				m.stop=true;break;
-			default:System.out.println("ÄúµÄÊäÈëÓĞÎó!\n");continue;
+			default:System.out.println("æ‚¨çš„è¾“å…¥æœ‰è¯¯!\n");continue;
 			}
 			if(m.stop)break;
 		}

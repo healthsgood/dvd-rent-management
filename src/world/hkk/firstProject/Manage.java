@@ -12,56 +12,56 @@ public class Manage {
 	Date time=new Date();
 
 	Manage(){
-		dvd[0]=new DVD("ºÚ°µÆïÊ¿","48.8",true,"ÕÅÈı","2017-12-15",5);
-		dvd[1]=new DVD("ĞÇ¼Ê´©Ô½","36.6",false,"  ","          ",1);
-		dvd[2]=new DVD("¶Ø¿Ì¶û¿Ë","59.8",true,"ÀîËÄ","2018-02-28",2);
-		dvd[3]=new DVD("¼ÇÒäËéÆ¬","37.5",false,"  ","          ",0);
-		dvd[4]=new DVD("µÁÃÎ¿Õ¼ä","45.9",false,"  ","          ",2);
+		dvd[0]=new DVD("é»‘æš—éª‘å£«","48.8",true,"å¼ ä¸‰","2017-12-15",5);
+		dvd[1]=new DVD("æ˜Ÿé™…ç©¿è¶Š","36.6",false,"  ","          ",1);
+		dvd[2]=new DVD("æ•¦åˆ»å°”å…‹","59.8",true,"æå››","2018-02-28",2);
+		dvd[3]=new DVD("è®°å¿†ç¢ç‰‡","37.5",false,"  ","          ",0);
+		dvd[4]=new DVD("ç›—æ¢¦ç©ºé—´","45.9",false,"  ","          ",2);
 	}
-	void init(){//³õÊ¼»¯Ö÷²Ëµ¥
-		System.out.println("\n------»¶Ó­Ê¹ÓÃDVD¹ÜÀíÏµÍ³------\n"
-				+ "------------Ö÷²Ëµ¥------------\n"
-				+ "1,²é¿´ËùÓĞDVD\n2,²é¿´ÒÑ½è³öDVD\n3,²é¿´Î´½è³öDVD\n4,"
-				+ "É¾³ıDVD\n5,Ìí¼ÓDVD\n6,×â½èDVD\n7,¹é»¹DVD\n8,DVDÅÅĞĞ°ñ\n"
-				+ "9,ÍË³ö\nÇëÑ¡Ôñ¶ÔÓ¦µÄ²Ù×÷(1/2/3/4/5/6/7/8/9):");
+	void init(){//åˆå§‹åŒ–ä¸»èœå•
+		System.out.println("\n------æ¬¢è¿ä½¿ç”¨DVDç®¡ç†ç³»ç»Ÿ------\n"
+				+ "------------ä¸»èœå•------------\n"
+				+ "1,æŸ¥çœ‹æ‰€æœ‰DVD\n2,æŸ¥çœ‹å·²å€Ÿå‡ºDVD\n3,æŸ¥çœ‹æœªå€Ÿå‡ºDVD\n4,"
+				+ "åˆ é™¤DVD\n5,æ·»åŠ DVD\n6,ç§Ÿå€ŸDVD\n7,å½’è¿˜DVD\n8,DVDæ’è¡Œæ¦œ\n"
+				+ "9,é€€å‡º\nè¯·é€‰æ‹©å¯¹åº”çš„æ“ä½œ(1/2/3/4/5/6/7/8/9):");
 	}
-	int searchIndex(String name){//¸ù¾İÓ°Æ¬Ãû²éÕÒÏÂ±ê
+	int searchIndex(String name){//æ ¹æ®å½±ç‰‡åæŸ¥æ‰¾ä¸‹æ ‡
 		int index=-1;
 		for(int i=0;i<count;++i)if(dvd[i].getName().equals(name))index=i;
 		return index;
 	}
-	void list(boolean special){//1,²é¿´ËùÓĞDVD
-		System.out.println("\nÓ°Æ¬\t\t¼Û¸ñ\t×´Ì¬\t½èÔÄÕß\t½è³öÈÕÆÚ\t\t½èÔÄ´ÎÊı");
+	void list(boolean special){//1,æŸ¥çœ‹æ‰€æœ‰DVD
+		System.out.println("\nå½±ç‰‡\t\t\tä»·æ ¼\t\tçŠ¶æ€\t\tå€Ÿé˜…è€…\tå€Ÿå‡ºæ—¥æœŸ\t\tå€Ÿé˜…æ¬¡æ•°");
 		for(int i=0;i<count;++i)dvd[i].showAll();
 		if(special)isContinue();
 	}
-	void lendList(boolean special){//2,²é¿´ÒÑ½è³öDVD
-		System.out.println("\nÓ°Æ¬\t\t¼Û¸ñ\t½èÔÄÕß\t½è³öÈÕÆÚ\t\t½èÔÄ´ÎÊı");
+	void lendList(boolean special){//2,æŸ¥çœ‹å·²å€Ÿå‡ºDVD
+		System.out.println("\nå½±ç‰‡\t\tä»·æ ¼\tå€Ÿé˜…è€…\tå€Ÿå‡ºæ—¥æœŸ\t\tå€Ÿé˜…æ¬¡æ•°");
 		for(int i=0;i<count;++i)dvd[i].showOnlyIsLend();
 		if(special)isContinue();
 	}
-	void notLendList(boolean special){//3,²é¿´Î´½è³öDVD
-		System.out.println("\nÓ°Æ¬\t\t¼Û¸ñ\t½èÔÄ´ÎÊı");
+	void notLendList(boolean special){//3,æŸ¥çœ‹æœªå€Ÿå‡ºDVD
+		System.out.println("\nå½±ç‰‡\t\tä»·æ ¼\tå€Ÿé˜…æ¬¡æ•°");
 		for(int i=0;i<count;++i)dvd[i].showOnlyNotLend();
 		if(special)isContinue();
 	}
-	void delete(){//4,É¾³ıDVD
-		System.out.println("------------É¾³ıDVD----------");
+	void delete(){//4,åˆ é™¤DVD
+		System.out.println("------------åˆ é™¤DVD----------");
 		boolean first=true;
 		while(true){
 			if(!first){
-				System.out.println("DVDÁĞ±íÈçÏÂ:");
+				System.out.println("DVDåˆ—è¡¨å¦‚ä¸‹:");
 				list(false);
-				System.out.println("\nÇë²Î¿¼´Ë±íÊäÈë:");
-			}else System.out.println("ÇëÊäÈëDVDÓ°Æ¬Ãû:");
+				System.out.println("\nè¯·å‚è€ƒæ­¤è¡¨è¾“å…¥:");
+			}else System.out.println("è¯·è¾“å…¥DVDå½±ç‰‡å:");
 			int index=searchIndex(input());
 			if(index==-1){
 				first=false;
-				System.out.print("ÄúÊäÈëµÄÓ°Æ¬Ãû²»´æÔÚ!");
+				System.out.print("æ‚¨è¾“å…¥çš„å½±ç‰‡åä¸å­˜åœ¨!");
 				continue;
 			}
 			else if(dvd[index].isLend()){
-				System.out.println("´ËDVDÒÑ±»½è³ö,ÈÔÒªÉ¾³ı?(ÊäÈëyÈ·ÈÏ)");
+				System.out.println("æ­¤DVDå·²è¢«å€Ÿå‡º,ä»è¦åˆ é™¤?(è¾“å…¥yç¡®è®¤)");
 				if(input().equals("y")){
 					for(int i=index;i<count-1;++i)dvd[i]=dvd[i+1];
 					--count;
@@ -73,7 +73,7 @@ public class Manage {
 				for(int i=index;i<count-1;++i)dvd[i]=dvd[i+1];
 				--count;
 			}
-			int tmp=miniMenu("É¾³ı");
+			int tmp=miniMenu("åˆ é™¤");
 			if(tmp==1){
 				first=true;
 				continue;
@@ -82,28 +82,28 @@ public class Manage {
 			if(tmp==3)stop=true;break;
 		}
 	}
-	void add(){//5,Ìí¼ÓDVD
-		System.out.println("------------Ìí¼ÓDVD----------");
+	void add(){//5,æ·»åŠ DVD
+		System.out.println("------------æ·»åŠ DVD----------");
 		boolean first=true;
 		while(true){
 			if(!first){
-				System.out.println("DVDÁĞ±íÈçÏÂ:");
+				System.out.println("DVDåˆ—è¡¨å¦‚ä¸‹:");
 				list(false);
-				System.out.println("\nÇë²Î¿¼´Ë±íÊäÈë:");
+				System.out.println("\nè¯·å‚è€ƒæ­¤è¡¨è¾“å…¥:");
 			}
-			else System.out.println("ÇëÊäÈëDVDÓ°Æ¬Ãû:");
+			else System.out.println("è¯·è¾“å…¥DVDå½±ç‰‡å:");
 			String name=input();
 			int index=searchIndex(name);
 			if(index!=-1){
 				first=false;
-				System.out.print("ÄúÒªÌí¼ÓµÄDVDÒÑ´æÔÚ!");
+				System.out.print("æ‚¨è¦æ·»åŠ çš„DVDå·²å­˜åœ¨!");
 				continue;
 			}
-			System.out.println("ÇëÊäÈëÓ°Æ¬¼Û¸ñ:");
+			System.out.println("è¯·è¾“å…¥å½±ç‰‡ä»·æ ¼:");
 			String price=input();
 			++count;
 			dvd[count-1]=new DVD(name,price);
-			int tmp=miniMenu("Ìí¼Ó");
+			int tmp=miniMenu("æ·»åŠ ");
 			if(tmp==1){
 				first=true;
 				continue;
@@ -112,33 +112,33 @@ public class Manage {
 			if(tmp==3)stop=true;break;
 		}
 	}
-	void rent(){//6,×âÁŞ
-		System.out.println("------------×âÁŞDVD----------");
+	void rent(){//6,ç§Ÿèµ
+		System.out.println("------------ç§ŸèµDVD----------");
 		boolean first=true;
 		while(true){
 			if(!first){
 				notLendList(false);
-				System.out.println("\nÇë²Î¿¼´Ë±íÊäÈëÓ°Æ¬Ãû:");
+				System.out.println("\nè¯·å‚è€ƒæ­¤è¡¨è¾“å…¥å½±ç‰‡å:");
 			}
-			else System.out.println("ÇëÊäÈëDVDÓ°Æ¬Ãû:");
+			else System.out.println("è¯·è¾“å…¥DVDå½±ç‰‡å:");
 			String name=input();
 			int index=searchIndex(name);
 			if(index==-1){
 				first=false;
-				System.out.println("´ËÓ°Æ¬²»´æÔÚ!ÒÔÏÂÎªËùÓĞÎ´½è³öDVD:");
+				System.out.println("æ­¤å½±ç‰‡ä¸å­˜åœ¨!ä»¥ä¸‹ä¸ºæ‰€æœ‰æœªå€Ÿå‡ºDVD:");
 				continue;
 			}
 			if(dvd[index].isLend()){
 				first=false;
-				System.out.println("²Ù×÷Ê§°Ü!´ËÓ°Æ¬ÒÑ±»³ö×â!ÒÔÏÂÎªËùÓĞÎ´½è³öDVD:");
+				System.out.println("æ“ä½œå¤±è´¥!æ­¤å½±ç‰‡å·²è¢«å‡ºç§Ÿ!ä»¥ä¸‹ä¸ºæ‰€æœ‰æœªå€Ÿå‡ºDVD:");
 				continue;
 			}
-			System.out.println("ÇëÊäÈë×âÁŞÕßĞÕÃû:");
-			dvd[index].setTenant(input());//×âÁŞĞÕÃû
-			dvd[index].setLend(true);//×´Ì¬
-			++dvd[index].rentTimes;//½èÔÄ´ÎÊı
-			dvd[index].setLendDate(sdf.format(time));//×âÁŞÊ±¼ä
-			int tmp=miniMenu("×âÁŞ");
+			System.out.println("è¯·è¾“å…¥ç§Ÿèµè€…å§“å:");
+			dvd[index].setTenant(input());//ç§Ÿèµå§“å
+			dvd[index].setLend(true);//çŠ¶æ€
+			++dvd[index].rentTimes;//å€Ÿé˜…æ¬¡æ•°
+			dvd[index].setLendDate(sdf.format(time));//ç§Ÿèµæ—¶é—´
+			int tmp=miniMenu("ç§Ÿèµ");
 			if(tmp==1){
 				first=true;
 				continue;
@@ -147,33 +147,33 @@ public class Manage {
 			if(tmp==3)stop=true;break;
 		}
 	}
-	void pay() throws Exception{//7,¹é»¹
-		System.out.println("------------¹é»¹DVD----------");
+	void pay() throws Exception{//7,å½’è¿˜
+		System.out.println("------------å½’è¿˜DVD----------");
 		boolean first=true;
 		while(true){
 			if(!first){
 				lendList(false);
-				System.out.println("\nÇë²Î¿¼´Ë±íÊäÈëÓ°Æ¬Ãû:");
+				System.out.println("\nè¯·å‚è€ƒæ­¤è¡¨è¾“å…¥å½±ç‰‡å:");
 			}
-			else System.out.println("ÇëÊäÈëDVDÓ°Æ¬Ãû:");
+			else System.out.println("è¯·è¾“å…¥DVDå½±ç‰‡å:");
 			int index=searchIndex(input());
 			if(index==-1){
 				first=false;
-				System.out.println("´ËÓ°Æ¬²»´æÔÚ!ÒÔÏÂÎªËùÓĞ½è³öDVD:");
+				System.out.println("æ­¤å½±ç‰‡ä¸å­˜åœ¨!ä»¥ä¸‹ä¸ºæ‰€æœ‰å€Ÿå‡ºDVD:");
 				continue;
 			}
 			if(!dvd[index].isLend()){
 				first=false;
-				System.out.println("´ËÓ°Æ¬Î´½è³ö,ÎŞĞè¹é»¹!ÒÔÏÂÎªËùÓĞ½è³öDVD:");
+				System.out.println("æ­¤å½±ç‰‡æœªå€Ÿå‡º,æ— éœ€å½’è¿˜!ä»¥ä¸‹ä¸ºæ‰€æœ‰å€Ÿå‡ºDVD:");
 				continue;
 			}
 			dvd[index].setLend(false);
 			dvd[index].setTenant("  ");
-			Date t=sdf.parse(dvd[index].getLendDate());//¶¨ÒåÁÙÊ±ÈÕÆÚ¶ÔÏó!!!!!!!!!!!!!!!!!!
+			Date t=sdf.parse(dvd[index].getLendDate());//å®šä¹‰ä¸´æ—¶æ—¥æœŸå¯¹è±¡!!!!!!!!!!!!!!!!!!
 			dvd[index].setLendDate("          ");
 			long days=(time.getTime()-t.getTime())/(24*60*60*1000);
-			System.out.println("×â½ğÎª£º"+(days+1)+"Ôª");
-			int tmp=miniMenu("¹é»¹");
+			System.out.println("ç§Ÿé‡‘ä¸ºï¼š"+(days+1)+"å…ƒ");
+			int tmp=miniMenu("å½’è¿˜");
 			if(tmp==1){
 				first=true;
 				continue;
@@ -182,37 +182,37 @@ public class Manage {
 			if(tmp==3)stop=true;break;
 		}
 	}
-	void rankList(){//8,ÅÅĞĞ°ñ
+	void rankList(){//8,æ’è¡Œæ¦œ
 		int tmp[]=new int[count];
 		for(int i=0;i<count;++i)tmp[i]=dvd[i].rentTimes;
 		for(int i=1;i<=count-1;++i)for(int j=0;j<count-i;++j){
 			if(tmp[j]==tmp[j+1])tmp[j+1]=-1;
 			if(tmp[j]<tmp[j+1])tmp[j]=tmp[j]+tmp[j+1]-(tmp[j+1]=tmp[j]);
 		}
-		System.out.println("\nÓ°Æ¬\t\t¼Û¸ñ\t×´Ì¬\t½èÔÄÕß\t½è³öÈÕÆÚ\t\t½èÔÄ´ÎÊı");
+		System.out.println("\nå½±ç‰‡\t\tä»·æ ¼\tçŠ¶æ€\tå€Ÿé˜…è€…\tå€Ÿå‡ºæ—¥æœŸ\t\tå€Ÿé˜…æ¬¡æ•°");
 		for(int i=0;i<count;++i)for(int j=0;j<count;++j)if(dvd[j].rentTimes==tmp[i])dvd[j].showAll();
 		isContinue();
 	}
-	void isContinue(){//ÊÇ·ñ¼ÌĞø
-		System.out.println("\nÊÇ·ñ¼ÌĞø?(y/ÆäËû)");
+	void isContinue(){//æ˜¯å¦ç»§ç»­
+		System.out.println("\næ˜¯å¦ç»§ç»­?(y/å…¶ä»–)");
 		if(!input().equals("y")){
-			System.out.println("\n----------ÏµÍ³ÒÑÍË³ö----------");
+			System.out.println("\n----------ç³»ç»Ÿå·²é€€å‡º----------");
 			stop=true;
 		}
 	}
-	int miniMenu(String op){//Ğ¡²Ëµ¥
-		System.out.println(op+"³É¹¦!");
-		System.out.println("\nÇëÊäÈëÄúÒª¼ÌĞø½øĞĞµÄ²Ù×÷:");
-		System.out.println("(1)¼ÌĞø"+op+"    (2)·µ»ØÖ÷²Ëµ¥    (ÆäËû)ÍË³öÏµÍ³");
+	int miniMenu(String op){//å°èœå•
+		System.out.println(op+"æˆåŠŸ!");
+		System.out.println("\nè¯·è¾“å…¥æ‚¨è¦ç»§ç»­è¿›è¡Œçš„æ“ä½œ:");
+		System.out.println("(1)ç»§ç»­"+op+"    (2)è¿”å›ä¸»èœå•    (å…¶ä»–)é€€å‡ºç³»ç»Ÿ");
 		String menu=input();
 		if(menu.equals("1"))return 1;
 		else if(menu.equals("2"))return 2;
 		else{
-			System.out.println("\n----------ÏµÍ³ÒÑÍË³ö----------");
+			System.out.println("\n----------ç³»ç»Ÿå·²é€€å‡º----------");
 			stop=true;
 		}return 3;
 	}
-	String input(){//ÊäÈëÓï¾ä
+	String input(){//è¾“å…¥è¯­å¥
 		@SuppressWarnings("resource")
 		Scanner sc=new Scanner(System.in);
 		return sc.next();

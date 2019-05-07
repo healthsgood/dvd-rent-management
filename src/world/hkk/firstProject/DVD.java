@@ -22,15 +22,15 @@ public class DVD {
 	DVD(){}
 	void showAll(){
 		System.out.println(name+(name.length()>4?"\t":"\t\t")+price+"\t"
-			+(isLend?"ÒÑ½è³ö\t":"Î´½è³ö\t")+tenant+"\t"+lendDate+"\t"+rentTimes+"´Î");
+			+(isLend?"å·²å€Ÿå‡º\t":"æœªå€Ÿå‡º\t")+tenant+"\t\t"+lendDate+"\t"+rentTimes+"æ¬¡");
 	}
 	void showOnlyIsLend(){
 		if(isLend)
-			System.out.println(name+(name.length()>4?"\t":"\t\t")+price+"\t"+tenant+"\t"+lendDate+"\t"+rentTimes+"´Î");
+			System.out.println(name+(name.length()>4?"\t":"\t\t")+price+"\t"+tenant+"\t"+lendDate+"\t"+rentTimes+"æ¬¡");
 	}
 	void showOnlyNotLend(){
 		if(!isLend)
-			System.out.println(name+(name.length()>4?"\t":"\t\t")+price+"\t"+rentTimes+"´Î");
+			System.out.println(name+(name.length()>4?"\t":"\t\t")+price+"\t"+rentTimes+"æ¬¡");
 	}
 	public String getName() {
 		return name;
